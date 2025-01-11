@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    overflow: hidden;
+    
+}
+
+
+
+body {
+    background-color: #4158D0;
+    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+     
+}
+body.active{
+    background: linear-gradient(to right, #283048, #859398);
+    
+}
+
+
+
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    
+    
+}
+
+#moon, #sun {
+    font-size: 2em;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    margin-right: 15px;
+    touch-action: manipulation;
+    color: black;
+
+}
+
+#moon{
+    padding-right: 12px;
+    padding-left: 12px;
+}
+#sun {
+    right: 60px; 
+}
+#clock{
+    font-family: "Oswald", monospace; 
+    font-size: 9rem;
+    width: 100%;
+    text-align: center;
+    color: white;
+    backdrop-filter: blur(20px);
+    background-color: hsla(0 ,0%, 100%,0.1);
+    transition: background-color 0.5s;
+    transition: color 0.3s;
+    
+}
+#clock.active{
+    color: black;
+    
+}
+
+#moon:hover, #sun:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    border-radius: 10px;
+    transition: background-color 0.5s, transform 0.5s;
+    
+
+}
+#moon:active, #sun:active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@media (max-width: 768px) {
+    #clock {
+        font-size: 6rem;
+    }
+
+    #moon, #sun {
+        font-size: 1.5em;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    #sun {
+        right: 80px;
+    }
+}
